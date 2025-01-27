@@ -37,8 +37,8 @@ const SearchManufacturer = ({
             </Combobox.Button>
             <Combobox.Input
               className="search-manufacturer__input"
-              placeholder="Volkswagen"
-              displayValue={(manufacturer: string) => manufacturer}
+              placeholder="Volkswagen..."
+              displayValue={(item: string) => item}
               onChange={(e) => setQuery(e.target.value)}
             />
             <Transition
