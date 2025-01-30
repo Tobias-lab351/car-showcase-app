@@ -1,8 +1,7 @@
-import { fetchCars } from "@/utils";
-import { CustomFilter, Hero, SearchBar,CarCard } from "@/components";
-
-
 import Image from "next/image";
+
+import { CustomFilter, Hero, SearchBar, CarCard } from "@/components";
+import { fetchCars } from "@/utils";
 
 export default async function Home() {
   const allCars = await fetchCars();
@@ -34,7 +33,7 @@ export default async function Home() {
           </section>
         ) : (
           <div className="home__error-container">
-            <h2 className="text-red-700 text-xl font-bolder">
+            <h2 className="text-red-700 text-xl font-bold">
               Oops , no results
             </h2>
             <p>{allCars?.message}</p>
