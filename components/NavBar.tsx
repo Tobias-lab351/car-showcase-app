@@ -1,7 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import CustomButton from "./CustomButton";
+// import CustomButton from "./CustomButton";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const NavBar = () => {
   return (
@@ -16,11 +24,20 @@ const NavBar = () => {
             className="object-contain"
           />
         </Link>
-        <CustomButton
+        {/* <CustomButton
           title="Sign In"
           btnType="button"
           containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
-        />
+        /> */}
+        <header className="flex justify-end items-center p-4 gap-4 h-16">
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </header>
       </nav>
     </header>
   );
